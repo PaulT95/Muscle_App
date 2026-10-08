@@ -9,14 +9,9 @@
 
 #ifdef _WIN32
     #include <glad/glad.h>
-    #define GLFW_EXPOSE_NATIVE_WIN32
 #endif
 
 #include <GLFW/glfw3.h>
-#ifdef _WIN32
-    #include <GLFW/glfw3native.h>
-    #include <windows.h>
-#endif
 
 #include <imgui.h>
 #include <implot.h>
@@ -64,6 +59,14 @@ void App::init() {
     glfwSetWindowPos(m_window, xpos, ypos);
     glfwMakeContextCurrent(m_window);
     glfwSwapInterval(1); // Enable vsync
+
+#ifdef _WIN32
+    if (!gladLoadGLLoader((GLADloadproc)glfwGetProcAddress)) {
+        std::cerr << "Failed to initialize GLAD\n";
+        m_running = false;
+        return;
+    }
+#endif
 
     // Setup Dear ImGui context
     IMGUI_CHECKVERSION();
@@ -113,7 +116,7 @@ void App::updateFit() {
 }
 
 void App::run() {
-    while (m_running && !glfwWindowShouldClose(m_window)) {
+    while (m_running && m_window && !glfwWindowShouldClose(m_window)) {
         glfwPollEvents();
 
         ImGui_ImplOpenGL3_NewFrame();
@@ -353,7 +356,7 @@ void App::renderTablePanel() {
             ImGui::TableSetColumnIndex(3);
             float active_t = (m_points[i].activeTorque());
 
-            ImGui::Text("%.3f V", active_t);
+            ImGui::Text("%.3f", active_t);
 
             // Action: Delete button
             ImGui::TableSetColumnIndex(4);
