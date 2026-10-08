@@ -18,12 +18,18 @@ This project is licensed under the **Creative Commons Attribution-NonCommercial 
 
 ---
 
-## Usage
+## Installation & usage 
 
-The app is avaiable both for Windows and MacOS (intel). You can also build for linux, by simply importing this repo into CLion and build.
-The app opens with exemplary data, and further there is an example .csv file in case you want to first write down numbers in a separated file.
-The usage should be quite straightfoward, where base on the point, you can adjust the fitting (grade) and it returns in live the R^2 and RMSE.
+The app is distributed as pre-compiled binaries for Windows and macOS that you can download [here](https://github.com/PaulT95/Muscle_App/releases), so no complex build setup is required—just download and run. (Linux users can easily build it by importing the repository into CLion).
+
+The app opens with exemplary data, and further there is an example .csv file in case you want to first write down numbers in a separated file. However, you can directly insert the angle/length you tested directly into the app. It needs angle/length, rest value and peak value (it doesn't matter whether positive or negative), it calculates automatically the peak to peak in the last column (i.e., active torque/force generated).
+The usage should be quite straightforward, where based on the points you insert, you can adjust the fitting (grade) and it returns in live the R^2 and RMSE.
 
 You can then adjust in the bottom left panel the condition: match by a given angle or return the angle/length corresponding to a given percentage of normalized force/torque.
 
 Have fun using it!
+
+## Example
+
+<img width="800" height="450" alt="example" src="https://github.com/user-attachments/assets/87370fd7-8e26-4296-b6f9-344d13a6f9c7" />
+
