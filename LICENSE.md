@@ -1,4 +1,4 @@
-<a href="https://github.com/PaulT95/ArchiTeccno">ArchiTeccno</a> © 2026 by
+<a href="https://github.com/PaulT95/Muscle_App">Muscle_App</a> © 2026 by
 <a href="https://github.com/PaulT95/">Paolo Tecchio</a> is licensed under
 <a href="https://creativecommons.org/licenses/by-nc/4.0/">
   Creative Commons Attribution-NonCommercial 4.0 International
